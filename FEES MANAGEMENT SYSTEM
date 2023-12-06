@@ -1,0 +1,23 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.EnumMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class FeesManagement {
+
+    private static final int WEEK_DAYS = 5;
+
+    public enum FeeType {
+        ANNUAL, MONTHLY, DAILY, WEEKLY
+    }
+
+    private Map<FeeType, Double> feesMap;
+
+    public FeesManagement() {
+        feesMap = new EnumMap<>(FeeType.class);
+    }
+
+    public void setFee(FeeType feeType, double fee) {
+        feesMap.put(feeType, fee);
+    }
